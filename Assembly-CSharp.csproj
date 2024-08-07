@@ -43,8 +43,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\recv.cs" />
     <Compile Include="Assets\Scripts\Pen_tip.cs" />
-    <Compile Include="Assets\Scripts\PaintController.cs" />
+    <Compile Include="Assets\Scripts\Deleter.cs" />
     <Compile Include="Assets\Scripts\DrawManager.cs" />
+    <Compile Include="Assets\Scripts\PaintController.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.38f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

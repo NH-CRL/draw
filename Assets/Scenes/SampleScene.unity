@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 133779165}
   - component: {fileID: 133779164}
+  - component: {fileID: 133779166}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Deleter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,9 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LineObjectPrefab: {fileID: 2859033427781149177, guid: 5cddd19992fd0104b8ba6cf75c6ac9a8, type: 3}
-  HandAnchor: {fileID: 0}
   preCollisionFlag: 0
-  currentCollsionFlag: 0
+  currentCollisionFlag: 0
 --- !u!4 &133779165
 Transform:
   m_ObjectHideFlags: 0
@@ -171,6 +171,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &133779166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133779163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13b5de5205bd994b8114bd38ac986ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &240685853
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,5 +922,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72d28b9fb2b7ca4ebf45097296f44c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawTexture: {fileID: 0}
-  buffer: []
