@@ -56,7 +56,7 @@ public class recv : MonoBehaviour
             recv_string = Encoding.ASCII.GetString(data);	//文字列に変換
             stArrayData = recv_string.Split(',');	//カンマ区切りで配列に入れる関数
 
-            Debug.Log(recv_string);
+            //Debug.Log(recv_string);
             
             /* ペン先の位置と線の描画を消す変数の代入 */
             recv_pen_tip_position.x = float.Parse(stArrayData[0]);
