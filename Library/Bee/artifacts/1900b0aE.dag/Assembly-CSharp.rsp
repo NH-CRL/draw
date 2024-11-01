@@ -376,6 +376,7 @@
 "Assets/Scripts/Deleter.cs"
 "Assets/Scripts/DrawCircle.cs"
 "Assets/Scripts/DrawManager.cs"
+"Assets/Scripts/LineRendererToCSV.cs"
 "Assets/Scripts/PaintController.cs"
 "Assets/Scripts/Pen_tip.cs"
 "Assets/Scripts/recv.cs"

@@ -1,14 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 public class DrawManager : MonoBehaviour
 {
+=======
+public class DrawManager : MonoBehaviour {
+
+    //変数を用意
+>>>>>>> origin/master
     [SerializeField] GameObject LineObjectPrefab;
     [SerializeField] DrawCircle drawCircle;  // DrawCircleスクリプトへの参照
     public bool preCollisionFlag;
     public bool currentCollisionFlag;
 
     private GameObject CurrentLineObject = null;
+<<<<<<< HEAD
+=======
+
+    //生成されたLineObjectを格納するリスト
+>>>>>>> origin/master
     private List<GameObject> LineObjects = new List<GameObject>();
 
     // 描いた線の座標を格納
@@ -27,7 +38,12 @@ public class DrawManager : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     void Update()
+=======
+    // Update is called once per frame
+    void Update ()
+>>>>>>> origin/master
     {
         // 衝突フラグの取得
         if (recv.recv_CollisionFlag == 1)
@@ -39,10 +55,18 @@ public class DrawManager : MonoBehaviour
             currentCollisionFlag = false;
         }
         
+<<<<<<< HEAD
+=======
+        // ペンが紙面に接触しているとき
+>>>>>>> origin/master
         if(currentCollisionFlag)
         {
             if(CurrentLineObject == null)
             {
+<<<<<<< HEAD
+=======
+                //PrefabからLineObjectを生成し、リストに追加
+>>>>>>> origin/master
                 CurrentLineObject = Instantiate(LineObjectPrefab, recv.recv_pen_tip_position, Quaternion.identity);
                 LineObjects.Add(CurrentLineObject);
             }
@@ -50,12 +74,21 @@ public class DrawManager : MonoBehaviour
             LineRenderer render = CurrentLineObject.GetComponent<LineRenderer>();
             int NextPositionIndex = render.positionCount;
             render.positionCount = NextPositionIndex + 1;
+<<<<<<< HEAD
+=======
+
+            //LineRendererのPositionsに現在のコントローラーの位置情報を追加
+>>>>>>> origin/master
             render.SetPosition(NextPositionIndex, recv.recv_pen_tip_position);
 
             // 描いた点をリストに追加
             drawnPoints.Add(recv.recv_pen_tip_position);
         } 
+<<<<<<< HEAD
         else if (currentCollisionFlag == false & preCollisionFlag == true)
+=======
+        else if (currentCollisionFlag == false & preCollisionFlag == true) //ペンが紙面から離れたとき
+>>>>>>> origin/master
         {
             if(CurrentLineObject != null)
             {
@@ -64,12 +97,17 @@ public class DrawManager : MonoBehaviour
             }
         }
 
+<<<<<<< HEAD
+=======
+        // dキーが押されたら全ての線を削除
+>>>>>>> origin/master
         if (Input.GetKeyDown(KeyCode.D))
         {
             foreach (GameObject line in LineObjects)
             {
                 Destroy(line);
             }
+<<<<<<< HEAD
             LineObjects.Clear();
             drawnPoints.Clear();
         }
@@ -140,3 +178,95 @@ public class DrawManager : MonoBehaviour
         return resampledPoints;
     }
 }
+=======
+            // リストもクリア
+            LineObjects.Clear();
+        }
+        preCollisionFlag = currentCollisionFlag;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+//
+// public class DrawManager : MonoBehaviour {
+//
+//     //変数を用意
+//     //SerializeFieldをつけるとInspectorウィンドウからゲームオブジェクトやPrefabを指定できます。
+//     [SerializeField] GameObject LineObjectPrefab;
+//     public bool preCollisionFlag;
+//     public bool currentCollisionFlag;
+//     
+//
+//     //現在描画中のLineObject;
+//     private GameObject CurrentLineObject = null;
+//     
+//
+//     // Use this for initialization
+//     void Start ()
+//     {
+//         preCollisionFlag = false;
+//         currentCollisionFlag = false;
+//     }
+//
+//
+//     // Update is called once per frame
+//     void Update ()
+//     {
+//         if (recv.recv_CollisionFlag == 1)
+//         {
+//             currentCollisionFlag = true;
+//         }
+//         else
+//         {
+//             currentCollisionFlag = false;
+//         }
+//         
+//         // ここから追加コード
+//
+//         //ペンが紙面に接触しているとき
+//         if(currentCollisionFlag)
+//         {
+//             if(CurrentLineObject == null)
+//             {
+//                 //PrefabからLineObjectを生成
+//                 CurrentLineObject = Instantiate(LineObjectPrefab, recv.recv_pen_tip_position, Quaternion.identity);
+//             }
+//             //ゲームオブジェクトからLineRendererコンポーネントを取得
+//             LineRenderer render = CurrentLineObject.GetComponent<LineRenderer>();
+//
+//             //LineRendererからPositionsのサイズを取得
+//             int NextPositionIndex = render.positionCount;
+//
+//             //LineRendererのPositionsのサイズを増やす
+//             render.positionCount = NextPositionIndex + 1;
+//
+//             //LineRendererのPositionsに現在のコントローラーの位置情報を追加
+//             /*render.SetPosition(NextPositionIndex, pointer.position);*/
+//             render.SetPosition(NextPositionIndex, recv.recv_pen_tip_position);
+//         } 
+//         else if (currentCollisionFlag == false & preCollisionFlag == true)//ペンが紙面から離れたとき
+//         {
+//             if(CurrentLineObject != null)
+//             {
+//                 //現在描画中の線があったらnullにして次の線を描けるようにする。
+//                 CurrentLineObject = null;
+//             }
+//         }
+//         preCollisionFlag = currentCollisionFlag;
+//     }
+// }
+>>>>>>> origin/master
